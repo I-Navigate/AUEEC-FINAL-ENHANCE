@@ -1,0 +1,362 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Loading Screen */
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #007BFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 9999;
+}
+
+.spinning {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #555;
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Background Image */
+body {
+    background: linear-gradient(rgba(173, 216, 230, 0.85), rgba(173, 216, 230, 0.85)),
+                url('Arellano-Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0; 
+    padding: 0; 
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+nav.navigation {
+    width: 100%;
+    height: 85px;
+    background-color: rgb(15, 15, 205);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.image-logo {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+
+.campus h5 {
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    animation: fadeInDown 2s ease-out;
+}
+
+.logo-link {
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: auto;
+    font-family: serif;
+    animation: fadeInUp 2s ease-out;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 75vh;
+}
+
+.logo-link:hover {
+    color: #99cbee;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+    overflow-y: auto;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 12px 0;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+    display: block;
+    padding: 10px 20px;
+}
+
+.mobile-menu a:hover {
+    color: #99cbee;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-btn:hover {
+    color: #99cbee;
+}
+
+/* Menu Divider */
+.menu-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 15px 40px;
+}
+
+/* Menu Header */
+.menu-header {
+    color: #99cbee;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 15px 0 10px 0;
+    text-align: center;
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Main Layout - TRANSPARENT */
+.main-content {
+    min-height: 100vh;
+    background: transparent; /* TRANSPARENT para makita ang background */
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* About Info Container - TRANSPARENT */
+.About-info {
+    max-width: 800px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.3); /* TRANSPARENT */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+    margin: 20px;
+    backdrop-filter: blur(5px);
+}
+
+/* About Section */
+.About h1 {
+    font-size: 2.5em;
+    color: #1a1a6e;
+    margin-bottom: 20px;
+}
+
+.About p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {  
+    nav.navigation {
+        height: 70px;
+        padding: 0 20px;
+    }
+    
+    .image-logo {
+        height: 50px;
+        width: 50px;
+        margin-right: 15px;
+    }
+    
+    .campus h5 {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    
+    .logo-link {
+        font-size: 22px;
+        margin-left: auto;
+        margin-right: 60px;
+    }
+    
+    .hamburger {
+        right: 15px;
+    }
+    
+    .hamburger .bar {
+        width: 22px;
+        height: 2px;
+    }
+    
+    .main-content {
+        padding-top: 100px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .About-info {
+        padding: 25px;
+        width: 95%;
+    }
+    
+    .About h1 {
+        font-size: 1.8em;
+    }
+    
+    .About p {
+        font-size: 1em;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    nav.navigation {
+        height: 60px;
+        padding: 0 15px;
+    }
+    
+    .image-logo {
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+    }
+    
+    .campus h5 {
+        font-size: 11px;
+    }
+    
+    .logo-link {
+        font-size: 18px;
+        margin-left: auto;
+        margin-right: 50px;
+    }
+    
+    .hamburger {
+        right: 10px;
+        padding: 5px;
+    }
+    
+    .hamburger .bar {
+        width: 20px;
+        height: 2px;
+        margin: 2px 0;
+    }
+    
+    .main-content {
+        padding-top: 85px;
+    }
+    
+    .About-info {
+        padding: 20px;
+    }
+    
+    .About h1 {
+        font-size: 1.5em;
+    }
+    
+    .About p {
+        font-size: 0.9em;
+    }
+}

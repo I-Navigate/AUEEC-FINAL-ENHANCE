@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAV CAMPUS</title>
+    <link rel="stylesheet" href="INAV-CAMPUS.CSS">
+</head>
+<body> 
+
+    <!--Loading Screen-->
+    <div class="loading">
+        <div class="spinning"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <div class="aulogo">
+            <img src="new-au-logo.png" class="image-logo" alt="Arellano Logo">
+        </div>
+        <div class="campus">
+            <h5>Arellano University Elisa Esguerra Campus</h5>
+        </div>
+        <a href="INAV-MainHome.html" class="logo-link">INAV</a>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <!-- QUESTION MARK HELP BUTTON - PERFECT POSITION -->
+    <div class="help-container">
+        <div class="help-button">
+            <span class="question-mark">?</span>
+            <div class="help-tooltip">
+                <h4>How To Navigate</h4>
+                <ul>
+                    <li data-icon="📱">Click the Menu Icon Above your screen Next to INAV.</li>
+                    <li data-icon="🏢">Click The Buildings you need for your destination</li>
+                    <li data-icon="ℹ️">Before Clicking try hovering your mouse or hold the button to see the details </li>
+                    <li data-icon="📹">After Clicking the button the video guide will show</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <nav class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <li class="menu-header">BUILDINGS</li>
+            <li><a href="Elisa-Bldg.html">Elisa Esguerra Bldg (Building A)</a></li>
+            <li><a href="Natividad-Bldg.html">Natividad Faustino Bldg (Building B)</a></li>
+            <li><a href="Gregorio-bldg.html">Gregorio Sanciano Bldg (Building C)</a></li>
+            <li><a href="Admin-Bldg.html">Admin-Bldg</a></li>
+            <li class="menu-divider"></li>
+            <li class="menu-header">OTHERS</li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="https://www.facebook.com/ElisaEsguerraCampus">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        
+        <!-- AU Info Section Container -->
+        <div class="au-container">
+            
+            <!-- AU Info Sections -->
+            <div class="au-info">
+                <div class="AU-Hymn">
+                    <h1>AU HYMN</h1>
+                    <p> Arellano pamantasan namin <br>
+                        Mahal naming Alma Mater. <br>
+                        Alay sa iyo mga puso namin <br>
+                        Lagi ka naming pakamamahalin<br>
+                        Ikaw ang aming tanging bukal<br>
+                        Ng malayang karunungan<br>
+                        O pamantaranan naming mahal<br>
+                        Arellano University.<br>
+                        <br>
+                        Arellano aming pamantaranan<br>
+                        Lingkod na tapat ng bayan<br>
+                        Ang dunong na sa amin ay bigay<br>
+                        Sa buhay ay gagamiting tanglaw<br>
+                        Sa Diyos ang samo nami't hiling<br>
+                        Ngalan mo'y laging magniningning<br>
+                        O pamantaranan naming mahal<br>
+                        Arellano University.</p>
+                </div>
+                <div class="AU-Vision">
+                    <h1>AU VISION</h1>
+                    <p>To be a model institution of learning<br>
+                         where relevant knowledge is acquired and skills<br>
+                        are developed in response<br>
+                         to the needs of the global community.</p>
+                         <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>AU-Mission</h1>
+                    <p>To provide equitable access <Br>
+                         to learning through relevant, innovative, industry-sensitive<br> 
+                         and environment-conscious academic programs and services</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- JavaScript -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        
+        // Hamburger menu toggle
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

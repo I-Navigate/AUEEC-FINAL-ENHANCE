@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAV CAMPUS</title>
+    <link rel="stylesheet" href="About.css">
+</head>
+<body> 
+    <!--Loading Screen-->
+    <div class="loading">
+        <div class="spinning"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <div class="aulogo">
+            <img src="new-au-logo.png" class="image-logo" alt="Arellano Logo">
+        </div>
+        <div class="campus">
+            <h5>Arellano University Elisa Esguerra Campus</h5>
+        </div>
+        <a href="INAV-CAMPUS.HTML" class="logo-link">INAV</a>
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <nav class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <li class="menu-header">BUILDINGS</li>
+            <li><a href="Elisa-Bldg.html">Elisa Esguerra Bldg (Building A)</a></li>
+            <li><a href="Natividad-Bldg.html">Natividad Faustino Bldg (Building B)</a></li>
+            <li><a href="Gregorio-bldg.html">Gregorio Sanciano Bldg (Building C)</a></li>
+            <li><a href="Admin-Bldg.html">Admin-Bldg</a></li>
+            <li class="menu-divider"></li>
+            <li class="menu-header">OTHERS</li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="https://www.facebook.com/ElisaEsguerraCampus">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="About-info">
+            <div class="About">
+                <h1><b>About</b></h1>
+                <p>Our website Focuses on navigating our school facilities such as Canteen, <br>
+                    Clinic, Admin Building, Teacher's Faculty, Classrooms, Library, OSA and Many more. <br>
+                    <br>
+                    This helps students prevent time consuming when they are not familiar to <br>
+                    School grounds especially the Transfer or Upcoming Gr 11 and Gr 12 Students.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
